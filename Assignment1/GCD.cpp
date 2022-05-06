@@ -13,6 +13,7 @@ int gcd(int a, int b){
     return b;
 }
 int main() {
-   
-    cout<<gcd(124,28);
+   int a , b;
+   cin >> a>> b;
+    cout<<gcd(a,b);
 }
