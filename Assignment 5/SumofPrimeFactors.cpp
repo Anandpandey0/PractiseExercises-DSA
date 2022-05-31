@@ -20,16 +20,16 @@ void primeFactor(){
     }
 }
 
-int getSumOfPrimeFactors(int n){
-    int ans=0;
-    int index = n;
-    while(index>1 && arr[index]!=index){
-        ans+= arr[index];
-        index /= arr[index];
+int sumOfPrimeFactors(int n){
+    int result=0;
+    int k = n;
+    while(k>1 && arr[k]!=k){
+        result+= arr[k];
+        k /= arr[k];
     }
-     ans+=arr[index];
+     result+=arr[k];
     
-    return ans;
+    return result;
 }
 
 
@@ -41,7 +41,7 @@ signed main() {
     int test_pass=0;
     
     for(int i=1;i<=40;i++){
-        if(getSumOfPrimeFactors(i)!=A[i-1]){
+        if(sumOfPrimeFactors(i)!=A[i-1]){
             cout<<"Wrong Answer  for n:"<<i<<"\n";
             break;
         };
@@ -50,12 +50,12 @@ signed main() {
     
     int x = 2e6-41;
     for(int i=0;i<=40;i++){
-        if(getSumOfPrimeFactors(x+i)!=A[i+40]){
+        if(sumOfPrimeFactors(x+i)!=A[i+40]){
             cout<<"Wrong Answer  for n:"<<x+i<<"\n";
             break;
         };
         test_pass++;
     }
-    cout<<"test_Passed: "<<test_pass<<"\n";
+    cout<<"Passed testcase "<<test_pass<<endl;
     
 }
