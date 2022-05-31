@@ -17,14 +17,14 @@ vector<int> primeFactorSum;
     }
     for(long long i=1;i<n;i++){
 
-        int ans=0;
-        int index = i;
-        while(index>1 && arr[index]!=index){
-            ans+= arr[index];
-            index /= arr[index];
+        int result=0;
+        int k = i;
+        while(k>1 && arr[k]!=k){
+            result+= arr[k];
+            k /= arr[k];
         }
-        ans+=arr[index];
-        primeFactorSum.push_back(ans);
+        result+=arr[k];
+        primeFactorSum.push_back(result);
     }
 }
 
