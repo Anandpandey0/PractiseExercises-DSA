@@ -7,14 +7,14 @@ vector<vector<int>> multiplication(vector<vector<int>> a, vector<vector<int>> b)
     int column2 = b.size();
     int s2 = b[0].size();
     vector<vector<int>> result;
-    if(col1!=col2){
-        return 0;
+    if(column1!=column2){
+        cout<<"0";
     }
     for(int i=0;i<s1;i++){
         vector<int> arr;
         for(int j=0;j<s2;j++){
             int num = 0;
-            for(int k=0;k<col1;k++){
+            for(int k=0;k<column1;k++){
                 num += a[i][k]*b[k][j];
             }
                 arr.push_back(num);
@@ -34,9 +34,9 @@ vector<vector<int>> Input(int n,int m){
             cin>>a;
             arr.push_back(a);
         }
-        output.push_back(arr);
+        outputVector.push_back(arr);
     }
-    return output;
+    return outputVector;
 }
 
 void print(vector<vector<int>> matrix){
