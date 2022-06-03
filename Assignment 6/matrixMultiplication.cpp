@@ -3,12 +3,12 @@ using namespace std;
 
 vector<vector<int>> multiplication(vector<vector<int>> a, vector<vector<int>> b){
     int s1 = a.size();
-    int col1 = a[0].size();
-    int col2 = b.size();
+    int column1 = a[0].size();
+    int column2 = b.size();
     int s2 = b[0].size();
     vector<vector<int>> result;
     if(col1!=col2){
-        return {{0}};
+        return 0;
     }
     for(int i=0;i<s1;i++){
         vector<int> arr;
@@ -25,14 +25,14 @@ vector<vector<int>> multiplication(vector<vector<int>> a, vector<vector<int>> b)
 }
 
 
-vector<vector<int>> takeInput(int n,int m){
-    vector<vector<int>> output;
+vector<vector<int>> Input(int n,int m){
+    vector<vector<int>> outputVector;
     for(int i=0;i<n;i++){
         vector<int> arr;
         for(int j=0;j<m;j++){
-            int x;
-            cin>>x;
-            arr.push_back(x);
+            int a;
+            cin>>a;
+            arr.push_back(a);
         }
         output.push_back(arr);
     }
@@ -51,10 +51,10 @@ void print(vector<vector<int>> matrix){
 int main(){
     int n,m;
     cin>>n>>m;
-    vector<vector<int>> a = takeInput(n,m);
+    vector<vector<int>> a = Input(n,m);
     int n1,m1;
     cin>>n1>>m1;
-    vector<vector<int>> b = takeInput(n1,m1);
+    vector<vector<int>> b = Input(n1,m1);
 
     vector<vector<int>> c = multiplication(a,b);
     print(c);
