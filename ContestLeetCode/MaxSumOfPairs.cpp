@@ -1,8 +1,8 @@
 class Solution {
 public:
     int maximumSum(vector<int>& nums) {
-        unordered_map <int,priority_queue<int>> ma;
-        int my = -1;
+        unordered_map <int,priority_queue<int>> m;
+        int mx = -1;
         for(int i=0;i<nums.size();i++)
         {
             int sum = 0;
@@ -12,16 +12,16 @@ public:
               sum += n%10;
                 n/=10;
             }
-            ma[sum].push(nums[i]);
-            if(ma[sum].size()>=2)
+            m[sum].push(nums[i]);
+            if(m[sum].size()>=2)
             {
-                int p = ma[sum].top();
-                ma[sum].pop();
-                int q = ma[sum].top();
-                ma[sum].push(p);
-                my = max(my,p+q);
+                int p = m[sum].top();
+                m[sum].pop();
+                int q = m[sum].top();
+                m[sum].push(p);
+                mx = max(mx,p+q);
             }
         }
-        return my;
+        return mx;
     }
 };
